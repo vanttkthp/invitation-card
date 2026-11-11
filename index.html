@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emma &amp; James – We’re Getting Married</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400&display=swap">
+<style>
+:root{
+  --bg:#fff7f6; --bg2:#fdeceb; --ink:#4a2f33; --muted:#8a6a6e; --rose:#c9737f; --gold:#b8935a; --card:#ffffffcc; --line:#e9c9c6;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#241619; --bg2:#2e1c20; --ink:#f6e6e4; --muted:#c9a6a8; --rose:#e58f9b; --gold:#d8b27a; --card:#38252acc; --line:#5a3a40; color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#241619; --bg2:#2e1c20; --ink:#f6e6e4; --muted:#c9a6a8; --rose:#e58f9b; --gold:#d8b27a; --card:#38252acc; --line:#5a3a40; color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.script{font-family:'Great Vibes',cursive,serif;font-weight:400;color:var(--rose)}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;margin:0}
+section{padding:90px 24px;max-width:960px;margin:0 auto;text-align:center}
+.eyebrow{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;color:var(--gold)}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:18px auto;max-width:260px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider::after{transform:scaleX(-1)}
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;max-width:none;
+  background:radial-gradient(ellipse at 20% 15%,var(--bg2),transparent 55%),radial-gradient(ellipse at 85% 85%,var(--bg2),transparent 55%),var(--bg)}
+.hero .names{font-size:clamp(3.4rem,13vw,8rem);line-height:1.05;margin:14px 0 6px}
+.hero .amp{display:block;font-size:.5em;line-height:1}
+.hero p.date{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3.5vw,1.9rem);font-style:italic;margin:6px 0}
+.btn{display:inline-block;margin-top:30px;padding:14px 38px;border:1px solid var(--rose);color:var(--rose);border-radius:50px;text-decoration:none;letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;transition:.3s}
+.btn:hover{background:var(--rose);color:#fff;box-shadow:0 8px 24px #c9737f55}
+.petal{position:fixed;top:-30px;z-index:0;pointer-events:none;opacity:.7;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) translateX(60px) rotate(360deg)}}
+main,.hero{position:relative;z-index:1}
+/* countdown */
+.count{display:flex;justify-content:center;gap:clamp(12px,4vw,34px);margin-top:36px;flex-wrap:wrap}
+.count div{min-width:76px;padding:16px 8px;background:var(--card);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(6px)}
+.count b{display:block;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--rose);line-height:1}
+.count span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+/* story */
+h2{font-size:clamp(2.2rem,6vw,3.4rem)}
+.story p{max-width:620px;margin:16px auto;font-size:1.08rem;color:var(--muted)}
+.quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--ink);margin-top:34px}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:36px 26px;box-shadow:0 10px 40px #c9737f14;transition:.4s}
+.card:hover{transform:translateY(-6px)}
+.card .ico{font-size:2rem}
+.card h3{font-size:1.7rem;margin:10px 0 4px}
+.card p{margin:4px 0;color:var(--muted)}
+.card strong{color:var(--ink);font-weight:400}
+/* timeline */
+.tl{max-width:480px;margin:40px auto 0;text-align:left;border-left:1px solid var(--gold);padding-left:28px}
+.tl div{position:relative;margin-bottom:28px}
+.tl div::before{content:"♥";position:absolute;left:-37px;top:0;font-size:.8rem;color:var(--rose);background:var(--bg);padding:2px 0}
+.tl b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--rose)}
+.tl span{display:block;color:var(--muted)}
+/* rsvp */
+.rsvp{background:var(--bg2);max-width:none;border-radius:0}
+.rsvp .inner{max-width:560px;margin:auto}
+.rsvp p{color:var(--muted)}
+footer{padding:60px 24px 80px;text-align:center}
+footer .script{font-size:2.6rem}
+footer small{color:var(--muted);letter-spacing:.15em}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s,transform 1s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.petal{display:none}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.music{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:50px;border:1px solid var(--rose);background:var(--card);color:var(--rose);font:400 .75rem 'Jost',sans-serif;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 8px 24px #c9737f33;transition:.3s}
+.music:hover{background:var(--rose);color:#fff}
+.music .ic{font-size:1.1rem;line-height:1}
+.music.on .ic{animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.35)}}
+@media (prefers-reduced-motion:reduce){.music.on .ic{animation:none}}
+.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));grid-auto-rows:170px;grid-auto-flow:dense;gap:14px;margin-top:40px}
+.ph{position:relative;border-radius:18px;overflow:hidden;cursor:pointer;border:1px solid var(--line);padding:0;background:var(--bg2);box-shadow:0 10px 30px #c9737f22;transition:.4s}
+.ph.tall{grid-row:span 2}.ph.wide{grid-column:span 2}
+.ph:hover{transform:translateY(-4px)}
+.ph svg{width:100%;height:100%;display:block;transition:transform .8s}
+.ph:hover svg{transform:scale(1.07)}
+.ph span{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,#2a1519b3);color:#fff;font:italic 1.15rem 'Cormorant Garamond',serif;text-align:left}
+.hint{color:var(--muted);font-size:.85rem;margin-top:22px}
+.lb{position:fixed;inset:0;z-index:50;background:#1c0f12ee;display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px;color:#fff}
+.lb.open{display:flex}
+.lb .fr{width:min(88vw,560px);height:min(68vh,620px);border-radius:16px;overflow:hidden;box-shadow:0 20px 80px #000a}
+.lb .fr svg{width:100%;height:100%;display:block}
+.lb .cap{font:italic 1.5rem 'Cormorant Garamond',serif;margin-top:16px}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;padding:12px;opacity:.8}
+.lb button:hover{opacity:1;color:var(--rose)}
+.lb .x{top:calc(12px + env(safe-area-inset-top,0px));right:14px}.lb .pv{left:6px;top:50%}.lb .nx{right:6px;top:50%}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Together with their families</div>
+  <h1 class="names script">Emma <span class="amp">&amp;</span> James</h1>
+  <div class="divider">♥</div>
+  <p class="date">Saturday, the twelfth of June, 2027</p>
+  <p class="eyebrow">Amsterdam · The Netherlands</p>
+  <div class="count" id="count" aria-label="Countdown to the wedding"></div>
+  <a class="btn" href="#rsvp">Kindly RSVP</a>
+</header>
+
+<main>
+  <section class="story reveal" id="story">
+    <div class="eyebrow">Our Story</div>
+    <h2 class="script">Two hearts, one love</h2>
+    <div class="divider">✦</div>
+    <p>It began with a shared umbrella on a rainy afternoon and a conversation that simply never ended. Every day since has felt like the best chapter of a book we never want to finish.</p>
+    <p>Now, with full hearts, we invite you to celebrate the beginning of our forever, surrounded by the people we love most.</p>
+    <div class="quote">“In you, I’ve found the love of my life and my closest friend.”</div>
+  </section>
+
+  <section class="reveal" id="details">
+    <div class="eyebrow">The Celebration</div>
+    <h2 class="script">Join us on our big day</h2>
+    <div class="grid">
+      <div class="card"><div class="ico">💍</div><h3>Ceremony</h3><p><strong>4:00 PM</strong></p><p>The Rose Garden Chapel</p><p>Herengracht 123, Amsterdam</p></div>
+      <div class="card"><div class="ico">🥂</div><h3>Reception</h3><p><strong>6:00 PM until late</strong></p><p>Villa Bloemenhof</p><p>Dinner, dancing &amp; joy</p></div>
+      <div class="card"><div class="ico">🌸</div><h3>Dress Code</h3><p><strong>Formal · Soft pastels</strong></p><p>Blush, sage, ivory &amp; champagne. Please leave white for the bride.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal" id="schedule">
+    <div class="eyebrow">The Day</div>
+    <h2 class="script">How it will unfold</h2>
+    <div class="tl">
+      <div><b>3:30 PM</b><span>Guests arrive &amp; welcome drinks</span></div>
+      <div><b>4:00 PM</b><span>The ceremony</span></div>
+      <div><b>5:00 PM</b><span>Photos &amp; cocktail hour</span></div>
+      <div><b>6:30 PM</b><span>Dinner &amp; toasts</span></div>
+      <div><b>8:30 PM</b><span>First dance &amp; party</span></div>
+    </div>
+  </section>
+
+  <section class="reveal" id="album">
+    <div class="eyebrow">Our Album</div>
+    <h2 class="script">Moments we treasure</h2>
+    <div class="divider">♥</div>
+    <div class="album-grid" id="album-grid"></div>
+    <p class="hint">Tap a photo to view it larger</p>
+  </section>
+
+  <section class="rsvp reveal" id="rsvp">
+    <div class="inner">
+      <div class="eyebrow">Will you be there?</div>
+      <h2 class="script">RSVP</h2>
+      <div class="divider">♥</div>
+      <p>Your presence is the greatest gift. Please let us know by <strong>May 1, 2027</strong> so we can save you a seat.</p>
+      <a class="btn" href="mailto:emma.james.wedding@example.com?subject=RSVP%20-%20Emma%20%26%20James&body=Name(s)%3A%0AAttending%3A%20Yes%20%2F%20No%0ADietary%20needs%3A">Send my RSVP</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="script">With all our love</div>
+  <p><small>EMMA &amp; JAMES · 12.06.2027</small></p>
+</footer>
+
+<button class="music" id="music" type="button" aria-pressed="false"><span class="ic">♪</span><span id="mlabel">Play music</span></button>
+
+<script>
+(function(){
+  // countdown
+  var target=new Date(2027,5,12,16,0,0).getTime(), box=document.getElementById('count');
+  function tick(){
+    var d=target-Date.now();
+    if(d<=0){box.innerHTML='<div><b>♥</b><span>Today’s the day</span></div>';return}
+    var v=[[Math.floor(d/864e5),'Days'],[Math.floor(d/36e5)%24,'Hours'],[Math.floor(d/6e4)%60,'Minutes'],[Math.floor(d/1e3)%60,'Seconds']];
+    box.innerHTML=v.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join('');
+  }
+  tick(); setInterval(tick,1000);
+  // falling petals
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var cols=['#f3b6bd','#f8d3d6','#e89aa6','#fbe3df'];
+    for(var i=0;i<14;i++){
+      var p=document.createElement('div'); p.className='petal';
+      var s=10+Math.random()*12;
+      p.style.cssText='left:'+Math.random()*100+'vw;width:'+s+'px;height:'+s*1.3+'px;background:'+cols[i%4]+';border-radius:70% 0 70% 0;animation-duration:'+(10+Math.random()*10)+'s;animation-delay:-'+Math.random()*14+'s';
+      document.body.appendChild(p);
+    }
+  }
+  // album (example illustrations; swap for real photos later)
+  function fl(x,y,r,c){var s='';for(var i=0;i<5;i++){var a=i*1.2566;s+='<circle cx="'+(x+Math.cos(a)*r)+'" cy="'+(y+Math.sin(a)*r)+'" r="'+r*.9+'" fill="'+c+'"/>'}return s+'<circle cx="'+x+'" cy="'+y+'" r="'+r*.6+'" fill="#f6d27a"/>'}
+  function ht(x,y,s,c){return '<path transform="translate('+x+' '+y+') scale('+s+')" d="M0 -10 C-20 -35 -50 -5 0 30 C50 -5 20 -35 0 -10Z" fill="'+c+'"/>'}
+  function gr(id,a,b,c){return '<defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+a+'"/><stop offset=".6" stop-color="'+b+'"/><stop offset="1" stop-color="'+c+'"/></linearGradient></defs><rect width="400" height="400" fill="url(#'+id+')"/>'}
+  var houses='',hc=['#c9737f','#e8b4a0','#b8935a','#d9a0a8','#a86470','#e9c9a8'];
+  for(var i=0;i<6;i++){var hh=130+(i%3)*30;houses+='<rect x="'+(i*66+4)+'" y="'+(250-hh)+'" width="60" height="'+hh+'" fill="'+hc[i]+'"/><rect x="'+(i*66+18)+'" y="'+(270-hh)+'" width="14" height="22" fill="#fff3d9"/><rect x="'+(i*66+38)+'" y="'+(270-hh)+'" width="14" height="22" fill="#fff3d9"/>'}
+  var stars='';for(var j=0;j<24;j++){stars+='<circle cx="'+((j*97)%400)+'" cy="'+((j*53)%240)+'" r="'+(1+j%3*.6)+'" fill="#fff" opacity=".8"/>'}
+  var P=[
+   {c:'Where it all began',k:'tall',s:gr('g1','#f7c6c0','#fbe3c4','#e6a3a9')+'<circle cx="200" cy="230" r="70" fill="#fff3d9" opacity=".9"/><path d="M0 300 Q200 270 400 300 V400 H0Z" fill="#b86b78"/><g fill="#4a2f33"><circle cx="175" cy="248" r="11"/><path d="M160 300 L165 262 Q175 255 185 262 L190 300Z"/><circle cx="222" cy="244" r="11"/><path d="M205 300 L212 258 Q222 250 232 258 L240 300Z"/></g>'+ht(200,150,.9,'#c9737f')},
+   {c:'Blooming together',k:'',s:'<rect width="400" height="400" fill="#fbe1de"/><g stroke="#8aa583" stroke-width="5"><path d="M110 400V250M200 400V180M290 400V260"/></g>'+fl(110,240,26,'#e58f9b')+fl(200,170,34,'#f3b6bd')+fl(290,250,28,'#d9707f')},
+   {c:'Forever begins',k:'',s:gr('g3','#f3d3d6','#fbe9e4','#e9c9c6')+'<g fill="none" stroke="#b8935a" stroke-width="12"><circle cx="160" cy="230" r="62"/><circle cx="240" cy="230" r="62"/></g><path d="M240 150 l18 -24 h-36z" fill="#bfe3f2" stroke="#fff" stroke-width="3"/>'},
+   {c:'Amsterdam, our city',k:'wide',s:gr('g4','#cfe0ee','#fbe3df','#f3c9c6')+houses+'<rect y="250" width="400" height="150" fill="#8fb3c9" opacity=".7"/><g opacity=".35">'+houses.replace(/y="(\d+)"/g,function(m,v){return 'y="'+(500-v)+'"'})+'</g>'},
+   {c:'Love is in the air',k:'tall',s:gr('g5','#fde8e6','#f8cfd3','#f3b6bd')+ht(120,150,1.3,'#e58f9b')+ht(270,110,.9,'#c9737f')+ht(250,260,1.5,'#d9707f')+ht(100,310,.8,'#f6a5b0')+'<path d="M120 190V400M270 140V400M250 310V400" stroke="#fff" stroke-width="2" opacity=".7"/>'},
+   {c:'Our first dance',k:'wide',s:gr('g6','#2e1c3a','#6d3555','#c9737f')+stars+'<circle cx="310" cy="90" r="36" fill="#fff3d9"/>'+ht(200,220,2.4,'#f3b6bd')+'<path d="M0 340 Q200 310 400 340 V400 H0Z" fill="#2a1519"/>'}
+  ];
+  var grid=document.getElementById('album-grid'),cur=0;
+  var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><div class="fr"></div><div class="cap"></div><button class="nx" aria-label="Next">›</button>';
+  document.body.appendChild(lb);
+  function svg(s){return '<svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'+s+'</svg>'}
+  P.forEach(function(p,i){var b=document.createElement('button');b.className='ph '+p.k;b.setAttribute('aria-label',p.c);b.innerHTML=svg(p.s)+'<span>'+p.c+'</span>';b.onclick=function(){show(i);lb.classList.add('open')};grid.appendChild(b)});
+  function show(i){cur=(i+P.length)%P.length;lb.querySelector('.fr').innerHTML=svg(P[cur].s);lb.querySelector('.cap').textContent=P[cur].c}
+  lb.querySelector('.x').onclick=function(){lb.classList.remove('open')};
+  lb.querySelector('.pv').onclick=function(){show(cur-1)};
+  lb.querySelector('.nx').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+  // romantic music (original, generated live with Web Audio)
+  var ac,master,timer,nextT=0,bar=0,on=false,btn=document.getElementById('music'),lab=document.getElementById('mlabel');
+  var chords=[[261.63,329.63,392,523.25],[220,261.63,329.63,440],[174.61,220,261.63,349.23],[196,246.94,293.66,392]];
+  function note(f,t,d,v,type){var o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(v,t+.04);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05)}
+  function playBar(t){
+    var c=chords[bar%4],step=.5,pat=[0,1,2,3,2,1,2,3];
+    note(c[0]/2,t,4.2,.16,'sine');note(c[2]/2,t,4.2,.07,'sine');
+    pat.forEach(function(p,i){note(c[p],t+i*step,1.6,.11,'triangle')});
+    if(bar%2===1){note(c[3]*2,t+1,2,.05,'sine');note(c[2]*2,t+2.5,2.2,.05,'sine')}
+    bar++;
+  }
+  function sched(){while(nextT<ac.currentTime+1.5){playBar(nextT);nextT+=4}}
+  function setUI(){btn.classList.toggle('on',on);btn.setAttribute('aria-pressed',on);lab.textContent=on?'Pause music':'Play music';btn.querySelector('.ic').textContent=on?'♥':'♪'}
+  btn.addEventListener('click',function(){
+    try{
+      if(!ac){
+        ac=new (window.AudioContext||window.webkitAudioContext)();
+        master=ac.createGain();master.gain.value=.55;
+        var dl=ac.createDelay(1),fb=ac.createGain();dl.delayTime.value=.36;fb.gain.value=.38;
+        master.connect(ac.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(ac.destination);
+      }
+      if(!on){ac.resume();nextT=ac.currentTime+.1;sched();timer=setInterval(sched,500);on=true}
+      else{clearInterval(timer);ac.suspend();on=false}
+      setUI();
+    }catch(e){}
+  });
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
